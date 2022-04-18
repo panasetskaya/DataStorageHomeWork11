@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.datastoragehomework11.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -31,7 +32,6 @@ class PositionsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_positions, container, false)
     }
 
@@ -54,7 +54,8 @@ class PositionsFragment : Fragment() {
             })
         recyclerViewPositions.adapter = positionListAdapter
         positionListAdapter.onPositionItemClickListener = {
-            Toast.makeText(view.context, "Тут сейчас будет переход", Toast.LENGTH_SHORT).show()
+            val action = PositionsFragmentDirections.actionPositionsFragmentToEmployeesFragment(it.title)
+            view.findNavController().navigate(action)
         }
     }
 
