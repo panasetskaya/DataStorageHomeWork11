@@ -9,4 +9,9 @@ class TypeConverter {
     fun fromPosition(position: Position): String {
         return position.title
     }
+
+    @TypeConverter
+    fun toPosition(position: String): Position {
+        return Position(position)
+    }
 }

@@ -47,7 +47,7 @@ class MainViewModel(context: Context): ViewModel() {
 
     }
 
-    fun getEmployees(thisPosition: Position): LiveData<List<Employee>> {
+    fun getEmployees(thisPosition: String): LiveData<List<Employee>> {
         return getEmployeesByPosition.invoke(thisPosition)
     }
 
