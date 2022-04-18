@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import com.example.datastoragehomework11.domain.Employee
 import com.example.datastoragehomework11.domain.MainRepository
 import com.example.datastoragehomework11.domain.Position
+import io.reactivex.rxjava3.core.Flowable
 
 class MainRepositoryImpl(context: Context): MainRepository {
 
@@ -18,11 +19,11 @@ class MainRepositoryImpl(context: Context): MainRepository {
         db.employmentDao().addPosition(position)
     }
 
-    override fun getAllPositions(): LiveData<List<Position>> {
+    override fun getAllPositions(): Flowable<List<Position>> {
         return db.employmentDao().getAllPositions()
     }
 
-    override fun getEmployeesByPosition(position: String): LiveData<List<Employee>> {
+    override fun getEmployeesByPosition(position: String): Flowable<List<Employee>> {
         return db.employmentDao().getEmployeesByPosition(position)
     }
 }

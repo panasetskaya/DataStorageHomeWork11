@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.example.datastoragehomework11.data.MainRepositoryImpl
 import com.example.datastoragehomework11.domain.*
 import io.reactivex.rxjava3.core.Completable
+import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
@@ -47,11 +48,11 @@ class MainViewModel(context: Context): ViewModel() {
 
     }
 
-    fun getEmployees(thisPosition: String): LiveData<List<Employee>> {
+    fun getEmployees(thisPosition: String): Flowable<List<Employee>> {
         return getEmployeesByPosition.invoke(thisPosition)
     }
 
-    fun getPositions(): LiveData<List<Position>> {
+    fun getPositions(): Flowable<List<Position>> {
         return getAllPositionsUseCase.invoke()
     }
 

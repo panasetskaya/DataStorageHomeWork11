@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        viewModel = ViewModelProvider(this, MainViewModelFactory(this)).get(MainViewModel::class.java)
 
         val positionList = listOf(Position("Java-разработчик"),
             Position("Тестировщик"),

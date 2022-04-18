@@ -1,6 +1,7 @@
 package com.example.datastoragehomework11.domain
 
 import androidx.lifecycle.LiveData
+import io.reactivex.rxjava3.core.Flowable
 
 interface MainRepository {
 
@@ -8,7 +9,7 @@ interface MainRepository {
 
     fun addPosition(position: Position)
 
-    fun getAllPositions(): LiveData<List<Position>>
+    fun getAllPositions(): Flowable<List<Position>>
 
-    fun getEmployeesByPosition(position: String): LiveData<List<Employee>>
+    fun getEmployeesByPosition(position: String): Flowable<List<Employee>>
 }

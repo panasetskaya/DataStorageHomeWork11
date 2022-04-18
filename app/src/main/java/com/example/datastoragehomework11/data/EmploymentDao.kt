@@ -7,12 +7,13 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.datastoragehomework11.domain.Employee
 import com.example.datastoragehomework11.domain.Position
+import io.reactivex.rxjava3.core.Flowable
 
 @Dao
 interface EmploymentDao {
 
     @Query("SELECT * FROM position")
-    fun getAllPositions(): LiveData<List<Position>>
+    fun getAllPositions(): Flowable<List<Position>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addEmployee(employee: Employee)
@@ -21,6 +22,6 @@ interface EmploymentDao {
     fun addPosition(position: Position)
 
     @Query("SELECT * FROM employee WHERE position==:position")
-    fun getEmployeesByPosition(position: String): LiveData<List<Employee>>
+    fun getEmployeesByPosition(position: String): Flowable<List<Employee>>
 
 }
