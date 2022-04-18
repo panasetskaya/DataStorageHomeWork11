@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
@@ -24,6 +25,8 @@ class EmployeesFragment : Fragment() {
     private lateinit var employeeListAdapter: EmployeeListAdapter
     private lateinit var button: FloatingActionButton
 
+    private lateinit var pBar: ProgressBar
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +36,7 @@ class EmployeesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        pBar = view.findViewById(R.id.progressBarEmployees)
         button = view.findViewById(R.id.floatingActionButtonAddEmployee)
         button.setOnClickListener {
             Toast.makeText(it.context, "Not yet implemented", Toast.LENGTH_SHORT).show()
@@ -46,6 +50,7 @@ class EmployeesFragment : Fragment() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 employeeListAdapter.submitList(it)
+                pBar.visibility = View.GONE
             },{
                 Log.i("MyRes", "viewModel error in Employees fragment: $it")
             })

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -27,6 +28,7 @@ class PositionsFragment : Fragment() {
     private lateinit var recyclerViewPositions: RecyclerView
     private lateinit var positionListAdapter: PositionListAdapter
     private lateinit var button: FloatingActionButton
+    private lateinit var pBar: ProgressBar
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +39,7 @@ class PositionsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        pBar = view.findViewById(R.id.progressBarPositions)
         button = view.findViewById(R.id.floatingActionButtonAddPosition)
         button.setOnClickListener {
             Toast.makeText(it.context, "Not yet implemented", Toast.LENGTH_SHORT).show()
@@ -49,6 +52,7 @@ class PositionsFragment : Fragment() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 positionListAdapter.submitList(it)
+                pBar.visibility = View.GONE
             },{
                 Log.i("MyRes", "viewModel error in Positions fragment: $it")
             })
