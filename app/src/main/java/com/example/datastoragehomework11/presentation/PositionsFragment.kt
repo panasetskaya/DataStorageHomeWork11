@@ -1,6 +1,7 @@
 package com.example.datastoragehomework11.presentation
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -29,6 +30,8 @@ class PositionsFragment : Fragment() {
     private lateinit var positionListAdapter: PositionListAdapter
     private lateinit var button: FloatingActionButton
     private lateinit var pBar: ProgressBar
+
+    private var state: Parcelable? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,6 +65,7 @@ class PositionsFragment : Fragment() {
             view.findNavController().navigate(action)
         }
     }
+
 
     override fun onDestroyView() {
         if (this::disposable.isInitialized && !disposable.isDisposed)

@@ -22,7 +22,13 @@ class MainActivity : AppCompatActivity() {
             Position("Проджект-менеджер"),
             Position("IOS-разработчик"),
             Position("Директор"),
-            Position("Розовый слон")
+            Position("Розовый слон"),
+            Position("Тимлид"),
+            Position("Технический писатель"),
+            Position("Позиция Т"),
+            Position("Позиция В"),
+            Position("Позиция З"),
+            Position("Позиция Ы")
         )
 
         for (i in positionList) {
@@ -36,7 +42,13 @@ class MainActivity : AppCompatActivity() {
             Employee("Петя", 45, 20, Position("Java-разработчик")),
             Employee("Жучок", 28, 7, Position("Тестировщик")),
             Employee("Даня", 20, 3, Position("Директор")),
-            Employee("Люба", 36, 8, Position("Android-разработчик"))
+            Employee("Люба", 36, 8, Position("Android-разработчик")),
+            Employee("Степа", 24, 89, Position("Дизайнер")),
+            Employee("Жора", 12, 28, Position("Розовый слон")),
+            Employee("Петя", 45, 20, Position("Java-разработчик")),
+            Employee("Иван", 28, 7, Position("Тимлид")),
+            Employee("Паша", 20, 3, Position("Технический писатель")),
+            Employee("Вика", 36, 8, Position("Android-разработчик"))
         )
 
         for (i in employeesList) {

@@ -16,6 +16,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import android.os.Parcelable
+import androidx.recyclerview.widget.LinearLayoutManager
+
 
 class EmployeesFragment : Fragment() {
 
@@ -24,7 +27,6 @@ class EmployeesFragment : Fragment() {
     private lateinit var recyclerViewEmployees: RecyclerView
     private lateinit var employeeListAdapter: EmployeeListAdapter
     private lateinit var button: FloatingActionButton
-
     private lateinit var pBar: ProgressBar
 
     override fun onCreateView(
@@ -36,6 +38,7 @@ class EmployeesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         pBar = view.findViewById(R.id.progressBarEmployees)
         button = view.findViewById(R.id.floatingActionButtonAddEmployee)
         button.setOnClickListener {
