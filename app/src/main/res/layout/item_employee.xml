@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/item_employee_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Иванов Иван Иванович" />
+
+        <TextView
+            android:id="@+id/item_employee_age_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/item_employee_name"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/age_label" />
+
+        <TextView
+            android:id="@+id/item_employee_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/item_employee_name"
+            app:layout_constraintStart_toEndOf="@+id/item_employee_age_label"
+            tools:text="30" />
+
+        <TextView
+            android:id="@+id/item_employee_position_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/item_employee_age_label"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/position_label" />
+
+        <TextView
+            android:id="@+id/item_employee_position"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/item_employee_age_label"
+            app:layout_constraintStart_toEndOf="@+id/item_employee_position_label"
+            tools:text="тестировщик" />
+
+        <TextView
+            android:id="@+id/item_employee_experience_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/item_employee_position_label"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/experience_label" />
+
+        <TextView
+            android:id="@+id/item_employee_experience"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/item_employee_position_label"
+            app:layout_constraintStart_toEndOf="@+id/item_employee_experience_label"
+            tools:text="5" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
